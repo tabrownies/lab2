@@ -1,11 +1,27 @@
-/*document.getElementById("weatherSubmit").addEventListener("click", (event) => {
+document.getElementById("weatherSubmit").addEventListener("submit", (event) => {
+    console.log("submited");
     event.preventDefault();
     const value = document.getElementById("weatherInput").value;
     if (value === "")
         return;
-    console.log(createFiveDayForcastTree(document.getElementById("weatherInput").value));
+        document.getElementById("currentCity").innerHTML = value;
+    getCurrentWeather(value);
+    getFiveDayForcast(value); 
+});
+/* //If I have time
+document.getElementsByTagName("body")[0].onload = (event) =>{
+    console.log('loaded');
+    event.preventDefault();
+    let xCorord, yCorord;
+    navigator.geolocation.getCurrentPosition((position)=> {
+        xCorord = position.coords.latitude;
+        yCorord = position.coords.longitude;
+    });
     
-});*/
+    document.getElementById("currentCity").innerHTML = xCorord;
+    getCurrentWeather(xCorord);
+    getFiveDayForcast(xCorord);
+};*/
 function updateCurrentWeatherDiv(currentWeather){
     /*console.log(currentWeather);   //Old Format
     let result = '<ul>';
@@ -45,15 +61,16 @@ function getCurrentWeather(place){
             return response.json();
         }).then(function (json) {
             currentWeather = json;
-            console.log(currentWeather);
+            //console.log(currentWeather);
             updateCurrentWeatherDiv(currentWeather);
         });
     
 }
 function updateFiveDayForcastDiv(fiveDayForcast){
     //newFormat
+    document.getElementById("fiveDayForcast").innerHTML='';
     for(day of fiveDayForcast){
-        console.log(day);
+        //console.log(day);
         let div = document.createElement("div");
         div.className="five-day-forcast-day";
         let title = document.createElement("h3");
@@ -62,7 +79,7 @@ function updateFiveDayForcastDiv(fiveDayForcast){
         let list = document.createElement("ul");
         for(time of day.times){
             let listItem = document.createElement('li');
-            console.log(time.dt_txt);
+            //console.log(time.dt_txt);
             let txt = document.createTextNode(`${moment(time.dt_txt).format('h')}:00: ${time.main.temp} F`); //(${time.main.temp_max} F/${time.main.temp_min} F)`);
             listItem.appendChild(txt);
             list.appendChild(listItem);
