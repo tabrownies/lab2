@@ -45,7 +45,7 @@ form input {
     grid-template-columns: 2fr repeat(3, 1fr);
     grid-template-rows: repeat(10, 1fr);
     grid-gap: 5px;
-    padding:5px;
+    padding: 5px;
     grid-auto-flow: column;
 }
 
@@ -55,17 +55,19 @@ form input {
 #currentHighBox,
 #currentLowBox {
     background-color: blue;
-    grid-row:span 2;
+    grid-row: span 2;
 }
+
 #currentIconBox,
 #currentDescriptionBox,
 #currentHumidityBox,
 #currentWindBox,
 #currentVisibilityBox,
-#currentSunriseSunsetBox{
+#currentSunriseSunsetBox {
     grid-row: span 5;
     background-color: red;
 }
+
 #currentWeatherTitle,
 #currentTempBox,
 #currentFeelsLikeBox,
@@ -76,7 +78,7 @@ form input {
 #currentHumidityBox,
 #currentWindBox,
 #currentVisibilityBox,
-#currentSunriseSunsetBox{
+#currentSunriseSunsetBox {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,26 +87,25 @@ form input {
 #fiveDayForcast {
     width: 100%;
     background-color: lightslategray;
-
-
-}
-
-#fiveDayForcast>ul {
-    width: 100%;
-    height: 400px;
-    padding: 20px 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
 
 }
 
-.five-day-forcast-day {
-    width: 16%;
-    height: 80%;
+#fiveDayForcast>div {
+    width: 400px;
+    height:300px;
+    padding: 20px 0;
+    text-align:center;
+    border:1px solid red;
+}
+#fiveDayForcast{
+
+}
+#fiveDayForcast>div>ul>li {
+
     list-style: none;
-    border: 1px solid red;
+
 }
 
 /*.five-day-forcast-day:hover{

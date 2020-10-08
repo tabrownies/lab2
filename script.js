@@ -51,7 +51,40 @@ function getCurrentWeather(place){
     
 }
 function updateFiveDayForcastDiv(fiveDayForcast){
-    let result = `<ul>`;
+    //newFormat
+    for(day of fiveDayForcast){
+        console.log(day);
+        let div = document.createElement("div");
+        div.className="five-day-forcast-day";
+        let title = document.createElement("h3");
+        title.innerHTML = day.date;
+        div.appendChild(title);
+        let list = document.createElement("ul");
+        for(time of day.times){
+            let listItem = document.createElement('li');
+            console.log(time.dt_txt);
+            let txt = document.createTextNode(`${moment(time.dt_txt).format('h')}:00: ${time.main.temp} F`); //(${time.main.temp_max} F/${time.main.temp_min} F)`);
+            listItem.appendChild(txt);
+            list.appendChild(listItem);
+        }
+        div.appendChild(list);
+        /* //doesn't work
+        let list = document.createElement("ul");
+        let descriptionLi = document.createElement("li");
+        let descriptionTxt = document.createTextNode(day.times[0].weather[0].description);
+        let icon = document.createElement("img");
+        icon.src = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`;
+        descriptionLi.appendChild(descriptionTxt);
+        descriptionLi.appendChild(icon);
+
+    
+        list.appendChild(descriptionLi);
+        div.append(list);*/
+        document.getElementById("fiveDayForcast").appendChild(div);
+    }
+    
+    //old format
+    /*let result = `<ul>`;
     console.log(fiveDayForcast.length);
     for(item in fiveDayForcast){
         result += `<li class="five-day-forcast-day"><div>`;
@@ -62,7 +95,7 @@ function updateFiveDayForcastDiv(fiveDayForcast){
     }
     result += `</ul>`;
     console.log(result);
-    document.getElementById("fiveDayForcast").innerHTML = result;
+    document.getElementById("fiveDayForcast").innerHTML = result;*/
 }
 function getFiveDayForcast(place) {
     function Day(date) {
