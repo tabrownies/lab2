@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+}
+
+header h1 {
+    font-size:60px;
+    padding: 20px 40px;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgoldenrodyellow;
+}
+
+form input {
+    margin: 20px 40px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#currentWeather {
+    width: 100%;
+    background-color: aliceblue;
+
+}
+
+#fiveDayForcast {
+    width: 100%;
+    background-color: lightslategray;
+
+
+}
+
+#fiveDayForcast>ul {
+    width: 100%;
+    height:400px;
+    padding:20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.five-day-forcast-day {
+    width: 14%;
+    height: 80%;
+    list-style: none;
+    border: 1px solid red;
+}
+.five-day-forcast-day:hover{
+    width:22%;
+    height:100%;
+}
+
+footer {
+    width: 100%;
+    background-color: pink;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+footer a{
+    font-size:20px;
+    padding:12px;
+}
