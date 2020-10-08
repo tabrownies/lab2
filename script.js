@@ -7,6 +7,7 @@
     
 });*/
 function updateCurrentWeatherDiv(currentWeather){
+    /*console.log(currentWeather);   //Old Format
     let result = '<ul>';
     for(item in currentWeather.main){
         result += `<li>${item}:  ${currentWeather.main[item]}</li>`;
@@ -14,9 +15,27 @@ function updateCurrentWeatherDiv(currentWeather){
     for(item in currentWeather.weather[0]){
         result += `<li>${item}:  ${currentWeather.weather[0][item]}</li>`;
     }
+    result += `<li>${moment(currentWeather.dt).format("MMMM Do YYYY")}</li>`;
+    for(item in currentWeather.sys){
+        result += `<li>${item}:  ${currentWeather.sys[item]}</li>`;
+    }
+    result += `<li>${currentWeather.wind.speed}</li>`;
+    result += `<li>${currentWeather.wind.deg}</li>`;
+    result += `<li>${currentWeather.visibility}</li>`;
     result += `</ul>`;
-    document.getElementById("currentWeather").innerHTML = result;
-
+    document.getElementById("currentWeather").innerHTML = result;*/
+    // new format
+    document.getElementById("currentWeatherDate").innerHTML = moment(currentWeather.dt);
+    document.getElementById('currentTempBox').innerHTML = currentWeather.main.temp;
+    document.getElementById('currentFeelsLikeBox').innerHTML = currentWeather.main.feels_like;
+    document.getElementById('currentHighBox').innerHTML = currentWeather.main.temp_max;
+    document.getElementById('currentLowBox').innerHTML = currentWeather.main.temp_min;
+    //console.log(currentWeather.weather[0].icon); //To check if icon works
+    document.getElementById('currentIconBox').innerHTML = `<img src="http://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png">`;
+    document.getElementById('currentDescriptionBox').innerHTML = currentWeather.weather[0].description;
+    document.getElementById('currentHumidityBox').innerHTML = currentWeather.main.humidity;
+    document.getElementById('currentVisibilityBox').innerHTML = currentWeather.visibility;
+    document.getElementById('currentSunriseSunsetBox').innerHTML = `Sunrise: ${moment(currentWeather.sys.sunrise)}---Sunset: ${moment(currentWeather.sys.sunset)}`;
 }
 function getCurrentWeather(place){
     let currentWeather;

@@ -20,7 +20,7 @@ header {
 }
 
 header h1 {
-    font-size:60px;
+    font-size: 60px;
     padding: 20px 40px;
 }
 
@@ -41,7 +41,45 @@ form input {
 #currentWeather {
     width: 100%;
     background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-gap: 5px;
+    padding:5px;
+    grid-auto-flow: column;
+}
 
+#currentWeatherTitle,
+#currentTempBox,
+#currentFeelsLikeBox,
+#currentHighBox,
+#currentLowBox {
+    background-color: blue;
+    grid-row:span 2;
+}
+#currentIconBox,
+#currentDescriptionBox,
+#currentHumidityBox,
+#currentWindBox,
+#currentVisibilityBox,
+#currentSunriseSunsetBox{
+    grid-row: span 5;
+    background-color: red;
+}
+#currentWeatherTitle,
+#currentTempBox,
+#currentFeelsLikeBox,
+#currentHighBox,
+#currentLowBox,
+#currentIconBox,
+#currentDescriptionBox,
+#currentHumidityBox,
+#currentWindBox,
+#currentVisibilityBox,
+#currentSunriseSunsetBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #fiveDayForcast {
@@ -53,34 +91,36 @@ form input {
 
 #fiveDayForcast>ul {
     width: 100%;
-    height:400px;
-    padding:20px 0;
+    height: 400px;
+    padding: 20px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    
+
 }
 
 .five-day-forcast-day {
-    width: 14%;
+    width: 16%;
     height: 80%;
     list-style: none;
     border: 1px solid red;
 }
-.five-day-forcast-day:hover{
+
+/*.five-day-forcast-day:hover{
     width:22%;
     height:100%;
-}
+}*/
 
 footer {
     width: 100%;
     background-color: pink;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-footer a{
-    font-size:20px;
-    padding:12px;
+
+footer a {
+    font-size: 20px;
+    padding: 12px;
 }
