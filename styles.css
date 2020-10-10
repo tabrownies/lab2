@@ -89,7 +89,6 @@ form input {
     background-color: lightslategray;
     display: flex;
     flex-direction: row;
-
 }
 
 #fiveDayForcast>div {
@@ -97,10 +96,17 @@ form input {
     height:300px;
     padding: 20px 0;
     text-align:center;
-    border:1px solid red;
+    
 }
-#fiveDayForcast{
-
+#fiveDayForcast>div:hover{
+    background-color:gold;
+}
+#fiveDayForcast2{
+    display: flex;
+    flex-direction: row;
+}
+.hidden{
+    display:none;
 }
 #fiveDayForcast>div>ul>li {
 

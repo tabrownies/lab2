@@ -99,7 +99,48 @@ function updateFiveDayForcastDiv(fiveDayForcast){
         div.append(list);*/
         document.getElementById("fiveDayForcast").appendChild(div);
     }
-    
+    for(let i = 0; i < document.getElementsByClassName('five-day-forcast-date').length; ++i){
+        //console.log(info);
+        let table = document.getElementsByClassName('five-day-forcast-date')[i].children[1].children[0];
+        let tr = document.createElement('tr');
+        for(time of fiveDayForcast[i].times){
+            console.log(time);
+            let tr = document.createElement('tr');
+
+            let td = document.createElement('td');
+            td.innerHTML = `${moment(time.dt_txt).format('h')}:00`;
+            tr.appendChild(td);
+
+            td = document.createElement('td');
+            td.innerHTML = `${time.main.temp} F`;
+            tr.appendChild(td);
+
+            td = document.createElement('td');
+            td.innerHTML = `${time.main.feels_like} F`;
+            td.className = 'hidden';
+            tr.appendChild(td);
+
+            td = document.createElement('td');
+            td.innerHTML = `${time.weather[0].description}`;
+            td.className = 'hidden';
+            tr.appendChild(td);
+
+            td = document.createElement('td');
+            td.innerHTML = `${time.main.temp_max} F`;
+            td.className = 'hidden';
+            tr.appendChild(td);
+
+            td = document.createElement('td');
+            td.innerHTML = `${time.main.temp_min} F`;
+            td.className = 'hidden';
+            tr.appendChild(td);
+
+            table.appendChild(tr);
+        }
+        
+        console.log(table);
+        
+    }
     //old format
     /*let result = `<ul>`;
     console.log(fiveDayForcast.length);
