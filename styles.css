@@ -1,18 +1,15 @@
 * {
     box-sizing: border-box;
-    font-family: sans-serif;
-    
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
 }
-
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgb(63, 85, 147);
 }
-
 header {
     width: 100%;
     display: flex;
@@ -24,14 +21,11 @@ header {
     position: sticky;
     top: 0;
 }
-
 header h1 {
     font-size: 60px;
-
     padding: 20px 40px;
     text-align:center;
 }
-
 form {
     width: 100%;
     display: flex;
@@ -39,22 +33,18 @@ form {
     justify-content: center;
     background-color: rgb(149, 168, 216);
 }
-
 form input {
     margin: 20px 40px;
     font-size: 30px;
     text-align: center;
 }
-
 #currentWeather {
     width: 100%;
-
     display: grid;
     grid-gap: 5px;
     padding: 5px;
     background-color: rgb(63, 85, 147);
 }
-
 #currentWeatherTitle,
 #currentTempBox,
 #currentFeelsLikeBox,
@@ -66,14 +56,10 @@ form input {
     align-items: center;
     font-size: 25px;
 }
-
 #currentIconBox,
 #currentDescriptionBox,
 #currentHumidityBox,
-#currentVisibilityBox,
-#currentSunriseSunsetBox,
-#currentSunriseBox,
-#currentSunsetBox {
+#currentVisibilityBox {
     background-color: #ddf;
     display:flex;
     justify-content: center;
@@ -81,9 +67,7 @@ form input {
 }
 #currentDescriptionBox,
 #currentHumidityBox,
-#currentVisibilityBox,
-#currentSunriseBox,
-#currentSunsetBox{
+#currentVisibilityBox{
     display:flex;
     flex-direction: column;
     font-size:25px;
@@ -91,16 +75,58 @@ form input {
 #currentIconBox img{
     width:60%;
 }
+#fiveDayForcast2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content: center;
+    background-color: #eef;  
+}
+.five-day-forcast-date{
+    border: 1px solid #ddd;
+    width:500px;
+    padding:8px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.five-day-forcast-date th{
+    border-bottom: 1px dashed #aaa;
+}
+.five-day-forcast-date th,
+.five-day-forcast-date td{
+    padding: 3px;
+    border-left:1px dashed #aaa;
+    text-align: center;
+}
+.five-day-forcast-date th:first-of-type,
+.five-day-forcast-date td:first-of-type{
+    border-left:none;
+}
+footer {
+    width: 100%;
+    background-color: goldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a:link,
+footer a:visited {
+    font-size: 20px;
+    padding: 12px;
+    color: #222;
+    text-decoration: none;
+}
+footer a:hover {
+    color: whitesmoke;
+    text-decoration: underline;
+}
 @media only screen and (min-width:681px) {
     #currentWeather {
-        width: 100%;
-
-        display: grid;
         grid-template-columns: 2fr repeat(2, 1fr);
         grid-template-rows: repeat(10, 1fr);
-
         grid-auto-flow: column;
-
     }
 
     #currentWeatherTitle,
@@ -109,29 +135,17 @@ form input {
     #currentHighBox,
     #currentLowBox {
         height: 80px;
-
         grid-row: span 2;
     }
 
     #currentIconBox,
     #currentDescriptionBox,
     #currentHumidityBox,
-    #currentVisibilityBox,
-    #currentSunriseSunsetBox,
-    #currentSunriseBox,
-    #currentSunsetBox {
+    #currentVisibilityBox {
         grid-row: span 5;
-
     }
 }
-
 @media only screen and (max-width:680px) {
-    header {
-
-        display: flex;
-        flex-direction: column;
-    }
-
     header h1 {
         font-size: 35px;
     }
@@ -152,22 +166,16 @@ form input {
     #currentFeelsLikeBox,
     #currentHighBox,
     #currentLowBox {
-
         grid-row: span 1;
         grid-column: span 2;
-
     }
 
     #currentIconBox,
     #currentDescriptionBox,
     #currentHumidityBox,
-    #currentVisibilityBox,
-    #currentSunriseSunsetBox,
-    #currentSunriseBox,
-    #currentSunsetBox {
+    #currentVisibilityBox{
         grid-row: span 2;
         grid-column: span 1;
-
     }
 }
 @media only screen and (max-width:400px){
@@ -182,10 +190,7 @@ form input {
     #currentIconBox,
     #currentDescriptionBox,
     #currentHumidityBox,
-    #currentVisibilityBox,
-    #currentSunriseSunsetBox,
-    #currentSunriseBox,
-    #currentSunsetBox{
+    #currentVisibilityBox{
         font-size:20px;
     }
     .five-day-forcast-date h3{
@@ -195,93 +200,13 @@ form input {
         font-size:12px;
     }
 }
-/*
-out of date
-#fiveDayForcast {
-    width: 100%;
-    background-color: lightslategray;
-    display: flex;
-    flex-direction: row;
-}
-
-#fiveDayForcast>div {
-    width: 400px;
-    height:300px;
-    padding: 20px 0;
-    text-align:center;
-    
-}
-#fiveDayForcast>div:hover{
-    background-color:gold;
-}*/
-
-#fiveDayForcast2 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction:row;
-    justify-content: center;
-    background-color: #eef;
-    
-}
-.five-day-forcast-date{
-    border: 1px solid #ddd;
-    width:500px;
-    padding:8px;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
 @media only screen and (max-width:500px){
     .five-day-forcast-date{
         width:100%;
     }
-
 }
 @media only screen and (min-width:401px){
     .five-day-forcast-date h3{
         font-size:25px;
     }
-}
-
-.five-day-forcast-date th{
-    border-bottom: 1px dashed #aaa;
-}
-.five-day-forcast-date th,
-.five-day-forcast-date td{
-    padding: 3px;
-    border-left:1px dashed #aaa;
-    text-align: center;
-}
-.five-day-forcast-date th:first-of-type,
-.five-day-forcast-date td:first-of-type{
-    border-left:none;
-}
-
-
-
-
-/*.five-day-forcast-day:hover{
-    width:22%;
-    height:100%;
-}*/
-
-footer {
-    width: 100%;
-    background-color: goldenrod;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-footer a:link,
-footer a:visited {
-    font-size: 20px;
-    padding: 12px;
-    color: #222;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: whitesmoke;
-    text-decoration: underline;
 }
