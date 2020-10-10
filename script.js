@@ -53,8 +53,9 @@ function updateCurrentWeatherDiv(currentWeather) {
     document.getElementById('currentHumidity').innerHTML = `${currentWeather.main.humidity}%`;
     document.getElementById('currentVisibility').innerHTML = `${currentWeather.visibility} ft`;
     //document.getElementById('currentSunriseSunsetBox').innerHTML = `Sunrise: ${moment(currentWeather.sys.sunrise)}---Sunset: ${moment(currentWeather.sys.sunset)}`;
+    /*console.log(currentWeather);
     document.getElementById("currentSunrise").innerHTML = moment(currentWeather.sys.sunrise).format('h:mm a');
-    document.getElementById("currentSunset").innerHTML = moment(currentWeather.sys.sunset).format('h:mm a');
+    document.getElementById("currentSunset").innerHTML = moment(currentWeather.sys.sunset);*/
   }
 
 function getCurrentWeather(place) {
