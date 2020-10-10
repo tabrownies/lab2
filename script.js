@@ -68,7 +68,7 @@ function getCurrentWeather(place){
 }
 function updateFiveDayForcastDiv(fiveDayForcast){
     //newFormat
-    document.getElementById("fiveDayForcast").innerHTML='';
+    /*document.getElementById("fiveDayForcast").innerHTML='';
     for(day of fiveDayForcast){
         //console.log(day);
         let div = document.createElement("div");
@@ -96,11 +96,12 @@ function updateFiveDayForcastDiv(fiveDayForcast){
 
     
         list.appendChild(descriptionLi);
-        div.append(list);*/
+        div.append(list);
         document.getElementById("fiveDayForcast").appendChild(div);
-    }
+    }*/
     for(let i = 0; i < document.getElementsByClassName('five-day-forcast-date').length; ++i){
         //console.log(info);
+        let dateDiv = document.getElementsByClassName('five-day-forcast-date')[i];
         let table = document.getElementsByClassName('five-day-forcast-date')[i].children[1].children[0];
         let tr = document.createElement('tr');
         for(time of fiveDayForcast[i].times){
@@ -136,9 +137,9 @@ function updateFiveDayForcastDiv(fiveDayForcast){
             tr.appendChild(td);
 
             table.appendChild(tr);
+            
         }
         
-        console.log(table);
         
     }
     //old format
