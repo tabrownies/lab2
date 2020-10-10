@@ -4,9 +4,9 @@ document.getElementById("weatherSubmit").addEventListener("submit", (event) => {
     const value = document.getElementById("weatherInput").value;
     if (value === "")
         return;
-        document.getElementById("currentCity").innerHTML = value;
+    document.getElementById("currentCity").innerHTML = value;
     getCurrentWeather(value);
-    getFiveDayForcast(value); 
+    getFiveDayForcast(value);
 });
 /* //If I have time
 document.getElementsByTagName("body")[0].onload = (event) =>{
@@ -22,7 +22,7 @@ document.getElementsByTagName("body")[0].onload = (event) =>{
     getCurrentWeather(xCorord);
     getFiveDayForcast(xCorord);
 };*/
-function updateCurrentWeatherDiv(currentWeather){
+function updateCurrentWeatherDiv(currentWeather) {
     /*console.log(currentWeather);   //Old Format
     let result = '<ul>';
     for(item in currentWeather.main){
@@ -53,7 +53,8 @@ function updateCurrentWeatherDiv(currentWeather){
     document.getElementById('currentVisibilityBox').innerHTML = currentWeather.visibility;
     document.getElementById('currentSunriseSunsetBox').innerHTML = `Sunrise: ${moment(currentWeather.sys.sunrise)}---Sunset: ${moment(currentWeather.sys.sunset)}`;
 }
-function getCurrentWeather(place){
+
+function getCurrentWeather(place) {
     let currentWeather;
     const url = "http://api.openweathermap.org/data/2.5/weather?q=" + place + ",US&units=imperial" + "&APPID=6ac1005487fd66a76c6b028559aeaf9c";
     fetch(url)
@@ -64,9 +65,188 @@ function getCurrentWeather(place){
             //console.log(currentWeather);
             updateCurrentWeatherDiv(currentWeather);
         });
-    
+
 }
-function updateFiveDayForcastDiv(fiveDayForcast){
+function resetFiveDayForcastLayout(){
+    document.getElementById('fiveDayForcast2').innerHTML = `
+            <div class="five-day-forcast-date">
+      <h3>
+        Date
+      </h3>
+      <div class="five-day-info">
+        <table>
+          <tr>
+            <th>
+              Time
+            </th>
+            <th>
+              Temperature
+            </th>
+            <th class="hidden">
+              Feels Like
+            </th>
+            <th class="hidden">
+              Description
+            </th>
+            <th class="hidden">
+              High
+            </th>
+            <th class="hidden">
+              Low
+            </th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="five-day-forcast-date">
+      <h3>
+        Date
+      </h3>
+      <div class="five-day-info">
+        <table>
+          <tr>
+            <th>
+              Time
+            </th>
+            <th>
+              Temperature
+            </th>
+            <th class="hidden">
+              Feels Like
+            </th>
+            <th class="hidden">
+              Description
+            </th>
+            <th class="hidden">
+              High
+            </th>
+            <th class="hidden">
+              Low
+            </th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="five-day-forcast-date">
+      <h3>
+        Date
+      </h3>
+      <div class="five-day-info">
+        <table>
+          <tr>
+            <th>
+              Time
+            </th>
+            <th>
+              Temperature
+            </th>
+            <th class="hidden">
+              Feels Like
+            </th>
+            <th class="hidden">
+              Description
+            </th>
+            <th class="hidden">
+              High
+            </th>
+            <th class="hidden">
+              Low
+            </th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="five-day-forcast-date">
+      <h3>
+        Date
+      </h3>
+      <div class="five-day-info">
+        <table>
+          <tr>
+            <th>
+              Time
+            </th>
+            <th>
+              Temperature
+            </th>
+            <th class="hidden">
+              Feels Like
+            </th>
+            <th class="hidden">
+              Description
+            </th>
+            <th class="hidden">
+              High
+            </th>
+            <th class="hidden">
+              Low
+            </th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="five-day-forcast-date">
+      <h3>
+        Date
+      </h3>
+      <div class="five-day-info">
+        <table>
+          <tr>
+            <th>
+              Time
+            </th>
+            <th>
+              Temperature
+            </th>
+            <th class="hidden">
+              Feels Like
+            </th>
+            <th class="hidden">
+              Description
+            </th>
+            <th class="hidden">
+              High
+            </th>
+            <th class="hidden">
+              Low
+            </th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="five-day-forcast-date">
+      <h3>
+        Date
+      </h3>
+      <div class="five-day-info">
+        <table>
+          <tr>
+            <th>
+              Time
+            </th>
+            <th>
+              Temperature
+            </th>
+            <th class="hidden">
+              Feels Like
+            </th>
+            <th class="hidden">
+              Description
+            </th>
+            <th class="hidden">
+              High
+            </th>
+            <th class="hidden">
+              Low
+            </th>
+          </tr>
+        </table>
+      </div>
+    </div>
+            
+            `;
+}
+function updateFiveDayForcastDiv(fiveDayForcast) {
     //newFormat
     /*document.getElementById("fiveDayForcast").innerHTML='';
     for(day of fiveDayForcast){
@@ -99,13 +279,16 @@ function updateFiveDayForcastDiv(fiveDayForcast){
         div.append(list);
         document.getElementById("fiveDayForcast").appendChild(div);
     }*/
-    for(let i = 0; i < document.getElementsByClassName('five-day-forcast-date').length; ++i){
+    resetFiveDayForcastLayout();
+    for (let i = 0; i < document.getElementsByClassName('five-day-forcast-date').length; ++i) {
         //console.log(info);
         let dateDiv = document.getElementsByClassName('five-day-forcast-date')[i];
-        let table = document.getElementsByClassName('five-day-forcast-date')[i].children[1].children[0];
+
+        let table = dateDiv.children[1].children[0];
         let tr = document.createElement('tr');
-        for(time of fiveDayForcast[i].times){
-            console.log(time);
+        for (time of fiveDayForcast[i].times) {
+            dateDiv.children[0].innerHTML = fiveDayForcast[i].date;
+            //console.log(time);
             let tr = document.createElement('tr');
 
             let td = document.createElement('td');
@@ -137,10 +320,31 @@ function updateFiveDayForcastDiv(fiveDayForcast){
             tr.appendChild(td);
 
             table.appendChild(tr);
-            
+
         }
-        
-        
+        dateDiv.addEventListener('mouseover', function () {
+            parent = dateDiv.parentElement;
+            dateDiv.parentElement.innerHTML = '';
+
+            parent.appendChild(dateDiv);
+            let tableHeadNode = dateDiv.children[1].children[0].children[0].children[0].children
+            console.log(tableHeadNode);
+            for (column of tableHeadNode) {
+                console.log(column.className = '');
+            }
+            let rows = dateDiv.children[1].children[0].children;
+            //console.log(rows);
+            for (let i = 1; i < rows.length; ++i) {
+                for (column of rows[i].children) {
+                    console.log(column.className = '');
+                }
+            }
+        });
+        dateDiv.addEventListener('mouseleave', function () {
+            resetFiveDayForcastLayout();
+            getFiveDayForcast(document.getElementById('currentCity').innerHTML);
+        });
+
     }
     //old format
     /*let result = `<ul>`;
@@ -156,12 +360,13 @@ function updateFiveDayForcastDiv(fiveDayForcast){
     console.log(result);
     document.getElementById("fiveDayForcast").innerHTML = result;*/
 }
+
 function getFiveDayForcast(place) {
     function Day(date) {
         this.date = date;
         this.times = [];
     };
-    
+
     function Time(list) {
         this.info = list;
     }
@@ -192,6 +397,3 @@ function getFiveDayForcast(place) {
 }
 getCurrentWeather("Provo");
 getFiveDayForcast("Provo");
-
-
-
