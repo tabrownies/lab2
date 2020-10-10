@@ -80,7 +80,7 @@ function resetFiveDayForcastLayout(){
               Time
             </th>
             <th>
-              Temperature
+              Temp.
             </th>
             <th class="hidden">
               Feels Like
@@ -109,7 +109,7 @@ function resetFiveDayForcastLayout(){
               Time
             </th>
             <th>
-              Temperature
+              Temp.
             </th>
             <th class="hidden">
               Feels Like
@@ -138,7 +138,7 @@ function resetFiveDayForcastLayout(){
               Time
             </th>
             <th>
-              Temperature
+              Temp.
             </th>
             <th class="hidden">
               Feels Like
@@ -167,7 +167,7 @@ function resetFiveDayForcastLayout(){
               Time
             </th>
             <th>
-              Temperature
+              Temp.
             </th>
             <th class="hidden">
               Feels Like
@@ -196,7 +196,7 @@ function resetFiveDayForcastLayout(){
               Time
             </th>
             <th>
-              Temperature
+              Temp.
             </th>
             <th class="hidden">
               Feels Like
@@ -225,7 +225,7 @@ function resetFiveDayForcastLayout(){
               Time
             </th>
             <th>
-              Temperature
+              Temp.
             </th>
             <th class="hidden">
               Feels Like

@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
-
+    font-family: sans-serif;
+    
     padding: 0;
     margin: 0;
 }
@@ -192,6 +193,19 @@ out of date
 }
 .five-day-forcast-date h3{
     font-size:25px;
+}
+.five-day-forcast-date th{
+    border-bottom: 1px dashed #aaa;
+}
+.five-day-forcast-date th,
+.five-day-forcast-date td{
+    padding: 3px;
+    border-left:1px dashed #aaa;
+    text-align: center;
+}
+.five-day-forcast-date th:first-of-type,
+.five-day-forcast-date td:first-of-type{
+    border-left:none;
 }
 
 
