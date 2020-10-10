@@ -3,7 +3,10 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <title>Lab 2</title>
+
   <link rel="stylesheet" href="/styles.css">
 </head>
 
@@ -12,10 +15,11 @@
     <h1>
       Weather for <span id="currentCity">Provo</span>
     </h1>
+    <form id="weatherSubmit">
+      <input id="weatherInput" type="text" placeholder="Enter New City">
+    </form>
   </header>
-  <form id="weatherSubmit">
-    <input id="weatherInput" type="text" placeholder="Enter New City">
-  </form>
+  
   <div id="currentWeather">
     <div id="currentWeatherTitle">
       Current Weather <span id="currentWeatherDate"></span>
