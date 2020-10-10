@@ -167,35 +167,35 @@ out of date
 #fiveDayForcast>div:hover{
     background-color:gold;
 }*/
+
 #fiveDayForcast2 {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content: center;
     background-color: #eef;
-    width: 100%;
-    margin: 0 5px 5px 5px;
-
+    
 }
-
-@media only screen and (max-width:850px) {
-    #fiveDayForcast2 {
-        flex-direction: column;
+.five-day-forcast-date{
+    border: 1px solid #ddd;
+    width:500px;
+    padding:8px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media only screen and (max-width:500px){
+    .five-day-forcast-date{
+        width:100%;
     }
 
-    .hidden {
-        display: initial;
-    }
+}
+.five-day-forcast-date h3{
+    font-size:25px;
 }
 
-@media only screen and (min-width:851px) {
-    .hidden {
-        display: none;
-    }
-}
 
-#fiveDayForcast>div>ul>li {
 
-    list-style: none;
-
-}
 
 /*.five-day-forcast-day:hover{
     width:22%;

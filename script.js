@@ -322,7 +322,7 @@ function updateFiveDayForcastDiv(fiveDayForcast) {
             table.appendChild(tr);
 
         }
-        dateDiv.addEventListener('mouseover', function () {
+        /*dateDiv.addEventListener('mouseover', function () {
             parent = dateDiv.parentElement;
             dateDiv.parentElement.innerHTML = '';
 
@@ -343,7 +343,7 @@ function updateFiveDayForcastDiv(fiveDayForcast) {
         dateDiv.addEventListener('mouseleave', function () {
             resetFiveDayForcastLayout();
             getFiveDayForcast(document.getElementById('currentCity').innerHTML);
-        });
+        });*/
 
     }
     //old format
