@@ -239,7 +239,7 @@ out of date
 
 footer {
     width: 100%;
-    background-color: rgb(110, 133, 78);
+    background-color: goldenrod;
     display: flex;
     justify-content: center;
     align-items: center;
