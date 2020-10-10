@@ -41,18 +41,21 @@ function updateCurrentWeatherDiv(currentWeather) {
     result += `</ul>`;
     document.getElementById("currentWeather").innerHTML = result;*/
     // new format
-    document.getElementById("currentWeatherDate").innerHTML = moment(currentWeather.dt);
-    document.getElementById('currentTempBox').innerHTML = currentWeather.main.temp;
-    document.getElementById('currentFeelsLikeBox').innerHTML = currentWeather.main.feels_like;
-    document.getElementById('currentHighBox').innerHTML = currentWeather.main.temp_max;
-    document.getElementById('currentLowBox').innerHTML = currentWeather.main.temp_min;
+    //console.log(moment())
+    document.getElementById("currentWeatherDate").innerHTML = `: (${moment(currentWeather.dt_txt).format('MMMM Do')})`;
+    document.getElementById('currentTemp').innerHTML = `: ${currentWeather.main.temp} F`;
+    document.getElementById('currentFeelsLike').innerHTML = `: ${currentWeather.main.feels_like} F`;
+    document.getElementById('currentHigh').innerHTML = `: ${currentWeather.main.temp_max} F`;
+    document.getElementById('currentLow').innerHTML = `: ${currentWeather.main.temp_min} F`;
     //console.log(currentWeather.weather[0].icon); //To check if icon works
     document.getElementById('currentIconBox').innerHTML = `<img src="http://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png">`;
-    document.getElementById('currentDescriptionBox').innerHTML = currentWeather.weather[0].description;
-    document.getElementById('currentHumidityBox').innerHTML = currentWeather.main.humidity;
-    document.getElementById('currentVisibilityBox').innerHTML = currentWeather.visibility;
-    document.getElementById('currentSunriseSunsetBox').innerHTML = `Sunrise: ${moment(currentWeather.sys.sunrise)}---Sunset: ${moment(currentWeather.sys.sunset)}`;
-}
+    document.getElementById('currentDescription').innerHTML = currentWeather.weather[0].description;
+    document.getElementById('currentHumidity').innerHTML = `${currentWeather.main.humidity}%`;
+    document.getElementById('currentVisibility').innerHTML = `${currentWeather.visibility} ft`;
+    //document.getElementById('currentSunriseSunsetBox').innerHTML = `Sunrise: ${moment(currentWeather.sys.sunrise)}---Sunset: ${moment(currentWeather.sys.sunset)}`;
+    document.getElementById("currentSunrise").innerHTML = moment(currentWeather.sys.sunrise).format('h:mm a');
+    document.getElementById("currentSunset").innerHTML = moment(currentWeather.sys.sunset).format('h:mm a');
+  }
 
 function getCurrentWeather(place) {
     let currentWeather;
