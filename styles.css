@@ -90,7 +90,7 @@ form input {
 #currentIconBox img{
     width:60%;
 }
-@media only screen and (min-width:501px) {
+@media only screen and (min-width:681px) {
     #currentWeather {
         width: 100%;
 
@@ -124,7 +124,7 @@ form input {
     }
 }
 
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:680px) {
     header {
 
         display: flex;
@@ -169,7 +169,31 @@ form input {
 
     }
 }
-
+@media only screen and (max-width:400px){
+    header h1{
+        font-size: 25px;
+    }
+    #currentWeatherTitle,
+    #currentTempBox,
+    #currentFeelsLikeBox,
+    #currentHighBox,
+    #currentLowBox,
+    #currentIconBox,
+    #currentDescriptionBox,
+    #currentHumidityBox,
+    #currentVisibilityBox,
+    #currentSunriseSunsetBox,
+    #currentSunriseBox,
+    #currentSunsetBox{
+        font-size:20px;
+    }
+    .five-day-forcast-date h3{
+        font-size: 20px;
+    }
+    .five-day-info{
+        font-size:12px;
+    }
+}
 /*
 out of date
 #fiveDayForcast {
@@ -212,9 +236,12 @@ out of date
     }
 
 }
-.five-day-forcast-date h3{
-    font-size:25px;
+@media only screen and (min-width:401px){
+    .five-day-forcast-date h3{
+        font-size:25px;
+    }
 }
+
 .five-day-forcast-date th{
     border-bottom: 1px dashed #aaa;
 }

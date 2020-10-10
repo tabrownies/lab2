@@ -42,7 +42,7 @@ function updateCurrentWeatherDiv(currentWeather) {
     document.getElementById("currentWeather").innerHTML = result;*/
     // new format
     //console.log(moment())
-    document.getElementById("currentWeatherDate").innerHTML = `: (${moment(currentWeather.dt_txt).format('MMMM Do')})`;
+    document.getElementById("currentWeatherDate").innerHTML = `: ${moment(currentWeather.dt_txt).format('MMMM Do')}`;
     document.getElementById('currentTemp').innerHTML = `: ${currentWeather.main.temp} F`;
     document.getElementById('currentFeelsLike').innerHTML = `: ${currentWeather.main.feels_like} F`;
     document.getElementById('currentHigh').innerHTML = `: ${currentWeather.main.temp_max} F`;
